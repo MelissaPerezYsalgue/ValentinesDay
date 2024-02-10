@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="valentines-container">
+  <img alt="hello kitty" src="https://i.gifer.com/1FaM.gif" height="360">
+  <div class="text">Please be my Valentine</div>
+  <button id="yesButton" class="yesButton">YES</button>
+  <button id="noButton" class="noButton">No</button>
+</div>
+
+<script>
+  const phrase = [
+    "No",
+    "try again",
+    "I' going to cry",
+    "you're wrong again",
+    "jumping in front of traffic"
+  ];
+
+  let noCount = 0;
+
+  document.getElementById('yesButton').addEventListener('click', function() {
+    document.querySelector('.valentines-container').innerHTML = `
+      <img alt="snoopy" src="https://hartfordbaking.com/wp-content/uploads/2019/02/charlie-brown-happy-valentines-cute-greetings-animated-gif-2.gif" width="200" height="170">
+      <div class="text">SO EXCITED</div>
+    `;
+  });
+
+  document.getElementById('noButton').addEventListener('click', function() {
+    noCount++;
+    const index = Math.min(noCount, phrase.length - 1);
+    document.getElementById('noButton').innerText = phrase[index];
+  });
+</script>
+
+</body>
+</html>
